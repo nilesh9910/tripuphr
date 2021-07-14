@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mt-5 pt-5">
+    <div class="col-2">
+        <a href="{% url 'dashboard:employee_new' %}" class="btn btn-primary border-5">Add Employee</a>
+        {% for dept in all_dept %}
+        <a href="{{ dept.get_absolute_url }}" class="btn btn-lightborder d-block text-dark border-dark p-3 my-2">{{dept.name}}</a>
+        {% endfor %}
+        <a href="{% url 'dashboard:add_dept' %}" class="btn btn-lightborder d-block text-dark border-dark p-3 my-2"><i class="bi bi-plus"></i> Add Department</a>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+        <div class="card-body p-3">
+            <div class="row">
+            <div class="col-8">
+                <div class="numbers">
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Employees</p>
+                <h5 class="font-weight-bolder mb-0">
+                    {{ emp_total }}
+                </h5>
+                </div>
+            </div>
+            <div class="col-4 text-end">
+                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+        <div class="card-body p-3">
+            <div class="row">
+            <div class="col-8">
+                <div class="numbers">
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">No. of Departments</p>
+                <h5 class="font-weight-bolder mb-0">
+                    {{ dept_total   }}
+                </h5>
+                </div>
+            </div>
+            <div class="col-4 text-end">
+                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

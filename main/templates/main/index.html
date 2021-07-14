@@ -1,0 +1,423 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TRIPUPP HR - Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="{% static 'main/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'main/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+  <link href="{% static 'main/assets/css/style.css' %} " rel="stylesheet">
+
+</head>
+
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center" style="max-width: 1400px;">
+
+      <h1 class="logo"><a href="index.html">Tripupp HR</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+        {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto " href="{% url 'dashboard:index' %}">Home(Dashboard)</a></li>
+        {% else %}
+          <li><a class="nav-link scrollto " href="{% url 'main:index' %}">Home</a></li>
+        {% endif %}
+          <li><a class="nav-link scrollto" href="#about">Payroll</a></li>
+          <li><a class="nav-link scrollto" href="#services">Benefits</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">Pricing</a></li>
+          <li><a class="nav-link scrollto" href="#team">Work With Us</a></li>
+        </ul>
+      </nav>
+        {% if user.is_authenticated %}
+        <div class="navbar-right" style="margin-left: auto;">
+          <a href="/logout" class="sign-in">Sign Out <i class="bi bi-chevron-right"></i></a>
+        </div>
+      {% else %}
+        <div class="navbar-right" style="margin-left: auto;">
+          <a href="{% url 'main:login' %}" class="sign-in">Sign In <i class="bi bi-chevron-right"></i></a>
+        </div>
+      {% endif %}
+    </div>
+  </header>
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-between pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <a href="#" class="free-trial d-flex justify-content-between">Try For Free Now!<i class="bi bi-chevron-right"></i></a>
+          <h1>Set Yor Business Up With Modern Payrolls, Benfits, And HR</h1>
+          <form class="getstarted blur">
+            <i class="bi bi-at at-icon"></i>
+            <input type="email" placeholder="Your email address">
+            <button type="submit">Get Started</button>
+          </form>
+          <h2>Our plans were build to fit your unique needs. Streamline, onboarding, benefits, payroll, PTO, and more with our simple, intuitive platform.</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'main/assets/img/hero-img.png' %} " class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="features-trial py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="feature-trial-point">
+            <i class="bi bi-check"></i><h4>Free 14-day Demo</h4>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="feature-trial-point">
+            <i class="bi bi-check"></i><h4>No Credit Card Needed</h4>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="feature-trial-point">
+            <i class="bi bi-check"></i><h4>No Setup</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="PersonManagement">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 p-4">
+          <div class="d-flex align-items-baseline title-blue"><h2>HR</h2><span class="px-2">Manager your people with ease.</span></div>
+          <div class="card p-4 m-4 add-candidate">
+            <h4>Add a candidate</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h4 class="mt-2">Review your offer letter for Jillian Wilde</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="candidate-letter">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 p-4">
+          <div class="card">
+            <h4 class="job-detail-title">Job Details</h4>
+            <div class="py-3 px-4">
+              <div class="job-detail">
+                <h5 class="title">Job Title</h5>
+                <div class="detail">Class Instructor <i class="bi bi-check"></i></div>
+              </div>
+              <div class="job-detail">
+                <h5 class="title">Department</h5>
+                <div class="detail">Fitness Training<i class="bi bi-check"></i></div>
+              </div>
+              <div class="job-detail">
+                <h5 class="title">Work Location</h5>
+                <div class="detail">Los Angeles <i class="bi bi-check"></i></div>
+              </div>
+              <div class="job-detail">
+                <h5 class="title">Classification</h5>
+                <div class="detail">Independent Contrator <i class="bi bi-check"></i></div>
+              </div>
+              <div class="job-detail">
+                <h5 class="title">Hire Date</h5>
+                <div class="detail">01/08/2020 <i class="bi bi-check"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="card p-3 employee-dir">
+            <div class="d-flex align-items-center justify-content-between px-2 pb-3">
+              <h3>Employee Directory</h3>
+              <a href="#" class="open-dir">Show All</a>
+            </div> 
+            <div class="row">
+              <div class="col-sm-6 px-3">
+                <div class="emp-card">
+                  <img class="profile-pic" src="{% static 'main/assets/img/emp-dir-p1.png' %} ">
+                  <div class="emp-detail mb-3">
+                    <h4>Naomi Brett</h4>
+                    <h5>Software Enginer</h5>
+                  </div>
+                  <div class="emp-detail mb-3">
+                    <h5>Full Time</h5>
+                    <h5>San Francisco</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 px-3">
+                <div class="emp-card">
+                  <img class="profile-pic" src="{% static 'main/assets/img/profile5.jpg' %} ">
+                  <div class="emp-detail mb-3">
+                    <h4>Naomi Brett</h4>
+                    <h5>Software Enginer</h5>
+                  </div>
+                  <div class="emp-detail mb-3">
+                    <h5>Full Time</h5>
+                    <h5>San Francisco</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="payrolls">
+    <div class="container">
+      <div class="d-flex align-items-baseline title-blue"><h2>Payrolls</h2><span class="px-2">Payrolls that's ease to use and seriously smart.</span></div>
+      <div class="row">
+        <div class="pb-5"></div>
+        <div class="col-md-3">
+          <div class="payroll-feature">
+            <img src="{% static 'main/assets/img/payroll1.png' %}" class="mb-3">
+            <p>Unlimited payrolls.<br> Clear pricing. No Suprises.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payroll-feature">
+            <img src="{% static 'main/assets/img/payroll2.png' %}" class="mb-3">
+            <p>Automatically files,<br> your payroll taxes.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payroll-feature">
+            <img src="{% static 'main/assets/img/payroll3.png' %}" class="mb-3">
+            <p>Everything you need,<br> synced with payroll.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payroll-feature">
+            <img src="{% static 'main/assets/img/payroll4.png' %}" class="mb-3">
+            <p>Compilance, accuracy,<br> and piece of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="benefits_before"></div>
+  <section class="benefits">
+    <div class="container">
+      <div class="d-flex align-items-baseline mb-5 py-4 text-light title-blue"><h2 class="text-light">Benefits</h2><span class="px-2">Finally, empolyee benefits for every business.</span></div>
+      <div class="row">
+        <div class="col-md-4 mx-auto px-5">
+          <div class="card-benefit">
+            <h3>Benefits</h3>
+            <h5>Select the medical plan that's best for you and your family.</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="card-pricing">
+              <div class="d-block" style="text-align: right;">
+                <i class="bi bi-check check-mark"></i>
+              </div>
+              <h4>Blue Cross<br>PPO Direct HSA 3K</h4>
+              <p class="pr-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h1>$393</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tripupp-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 style="color: rgb(102, 102, 102);">Tripupp</h4>
+              <h4 style="color: rgb(255, 255, 255);">Benefits Card</h4>
+            </div>
+            <div class="row mt-3">
+              <div class="col-3"><h2><b>1234</b></h2></div>
+              <div class="col-3"><h2><b>5678</b></h2></div>
+              <div class="col-3"><h2><b>9000</b></h2></div>
+              <div class="col-3"><h2><b>0000</b></h2></div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h6 style="font-weight: 600;color:#7a7a7a;">1234</h6>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center"><p style="color: #7a7a7a; line-height: 15px; font-size: 13px;">VALID<br> THRU</p><h6 style="color:#7a7a7a ; margin-left: 0.5rem; font-family: 'Raleway', sans-serif;"><b>12/19</b></h6></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pt-3">
+              <h2 style="text-transform: uppercase; font-size: 27px; margin-bottom: 0;"><b>Micheal Willams</b></h2>
+              <div><div class="circle-red"></div><div class="circle-yellow"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="benefits_after"></div>
+
+  <div class="container">
+    <div class="row pt-1 pb-5">
+      <div class="col-md-4 text-center">
+        <img src="{% static 'main/assets/img/be-pln1.png' %}" style="height: 120px;">
+        <p style="font-size: 17px; color: #65bad0; max-width: 250px; margin: auto;">Our benefits are designed to be accessible for all.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="{% static 'main/assets/img/be-pln2.png' %}" style="height: 120px;">
+        <p style="font-size: 17px; color: #65bad0; max-width: 250px; margin: auto;">A helthy team can better support your business and your bottom line.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="{% static 'main/assets/img/be-pln3.png' %}" style="height: 120px;">
+        <p style="font-size: 17px; color: #65bad0; max-width: 250px; margin: auto;">Become a business where talented people want to work and stick around.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="platform-info">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1>A complete HR platform saves your time.</h1>
+        </div>
+        <div class="col-md-6">
+          <h5>Tripupp streamlines your work flow by automatically<br> conntecting HR, Benefits, Playrolls and Scheduling todether in one platform. This means less time spent on low priority tasks so your team can focus on more inportant things.</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-us">
+    <div class="container">
+      <h1>Why Us?</h1>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <h4>Hire and retain top talent.</h4>
+            <p>We make onboarding employees ridiculously easy. On dayone they're ready to go. And retaining them is easier, too, with advance HR tools like compensation reporting.</p>
+          </div>
+        </div>
+        <div class="col-md-3 mt-5">
+          <div class="card">
+            <h4>Stay Complaint</h4>
+            <p>Keeping a business Complaint is made easier with Zenefits. We automate many of the compilance tasks and governement filings for you.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <h4>Improve Productivity.</h4>
+            <p>Many of our features like self onboarding, selecting benefits, and signing documents happen completely online, which means your emplayees will spend more time focused on their core functions.</p>
+          </div>
+        </div>
+        <div class="col-md-3 mt-5">
+          <div class="card">
+            <h4>Improve Employee Expreience.</h4>
+            <p>We improve your employees' overall experience. From a mobile app that steamlines onboarding and requesting time off, to a modern experience that lets employees sign up for benefits online.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask-for-help">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1>We're Here To<br> Help You.<br> Ask Us Anything<br> Or Schedule A Demo Call.</h1>
+        </div>
+        <div class="col-md-4">
+          <a href="#" class="advisor-help">Talk To Advisor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="our-team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 px-4">
+          <div class="person-profile">
+            <div class="detail-person">
+              <div class="d-flex align-items-center justify-content-between"><h4>Ashley Landazo<br><span>Manager</span></h4><div class="rating"><i class="bi bi-star-fill yellow"></i><i class="bi bi-star-fill yellow"></i><i class="bi bi-star-fill yellow"></i><i class="bi bi-star-fill yellow"></i><i class="bi bi-star-fill yellow"></i></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="slide-btn"><a href="#" class="bi bi-arrow-left slide-left"></a><a href="#" class="bi bi-arrow-right slide-right"></a></div>
+          <div class="team">
+            <div class=" img-main-text">When we enboard our employees its really quick and easy. We get to focus on making sure that they're okay and happy and being introducted to the company.</div>
+            <div class="d-flex align-items-center justify-content-between">
+              <img src="{% static 'main/assets/img/profile2.jpg' %}" class="profile-team img-corner">
+              <img src="{% static 'main/assets/img/profile3.jpg' %}" class="profile-team img-mid">
+              <img src="{% static 'main/assets/img/profile.jpg' %}" class="profile-team img-main">
+              <img src="{% static 'main/assets/img/profile4.jpg' %}" class="profile-team img-mid">
+              <img src="{% static 'main/assets/img/profile5.jpg' %}" class="profile-team img-corner">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get-started">
+    <div class="contianer">
+      <div class="row">
+        <div class="col-md-3 mx-auto">
+          <h1> Get Your Team Working With Us!</h1>
+          <a href="#">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>All-in-one platform</h4>
+          <a href="#" class="nav-link">Payroll</a>
+          <a href="#" class="nav-link">Employee Benefits</a>
+          <a href="#" class="nav-link">Health insurance</a>
+          <a href="#" class="nav-link">Financial benefits</a>
+          <a href="#" class="nav-link">Hiring and onboarding</a>
+          <a href="#" class="nav-link">Expert HR</a>
+          <a href="#" class="nav-link">Time tracking tool</a>
+          <a href="#" class="nav-link">Workers' comp</a>
+          <a href="#" class="nav-link">Integrations</a>
+          <a href="#" class="nav-link">Gusto Wallet</a>
+          <a href="#" class="nav-link">Gusto Partner Offers</a>
+        </div>
+        <div class="col-md-4">
+          <h4>Tools</h4>
+          <a href="#" class="nav-link">Small Business Financial Reliefs</a>
+          <a href="#" class="nav-link">Employer tax calculator</a>
+          <a href="#" class="nav-link">Burn rate calculator</a>
+          <a href="#" class="nav-link">Salary comparison tool</a>
+          <a href="#" class="nav-link">New hire checklist</a>
+          <a href="#" class="nav-link">Small buiness guides</a>
+          <h4 class="mt-3">Contact - <span class="text-danger">001256789</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4>About Gusto</h4>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Careers - <span class="text-danger">We're Hiring</span></a>
+          <a href="#" class="nav-link">Press</a>
+          <a href="#" class="nav-link">Contact</a>
+          <a href="#" class="nav-link">Investors</a>
+          <a href="#" class="nav-link">Affiliate Program</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

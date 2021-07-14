@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="lead">{{dept.name | capfirst}} Department <a href="{% url 'main:dept_update' dept.pk %}" class="btn btn-rounded btn-success float-right"> <i class="fa fa-edit"></i>  Update Info</a></span><hr>    
+                                <div class="row">
+                                <!--First Column-->
+                                    <div class="col-lg-5">
+                                        <div class="card border-left border-info shadow-sm">
+                                            <div class="card-body">
+                                                <p class="lead">Description</p>
+                                                <p class='text-justify'>
+                                                    {{dept.description}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                       <!--Second Column-->
+                                    <div class="col-lg-7 PersonManagement">
+                                        <div class="card border-right border-info shadow-sm">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                <div class="card p-3 employee-dir">
+                                                    <div class="d-flex align-items-center justify-content-between px-2 pb-3">
+                                                    <h3>Employee Directory</h3>
+                                                    </div> 
+                                                    <div class="row">
+                                                    {% if employees %}
+                                                    {% for employee in employees  %}
+                                                    <div class="col-sm-6 px-3">
+                                                        <div class="emp-card">
+                                                        <img class="profile-pic" src="{{employee.dp.url}}">
+                                                        <div class="emp-detail mb-3">
+                                                            <h4>{{employee.first_name|capfirst}} {{employee.last_name|capfirst}}</h4>
+                                                            <h5>{{employee.department}}</h5>
+                                                        </div>
+                                                        <div class="emp-detail mb-3">
+                                                            <h5>{{employee.classification}}</h5>
+                                                            <h5>{{employee.address}}</h5>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                    {% else %}
+                                                    <p class="lead text-center"> No Associated Employee</p>
+                                                    {% endif %}
+                                                    <div class="col-sm-6 px-3">
+                                                        <div class="emp-card">
+                                                        <img class="profile-pic" src="/static/main/assets/img/profile5.jpg ">
+                                                        <div class="emp-detail mb-3">
+                                                            <h4>Naomi Brett</h4>
+                                                            <h5>Software Enginer</h5>
+                                                        </div>
+                                                        <div class="emp-detail mb-3">
+                                                            <h5>Full Time</h5>
+                                                            <h5>San Francisco</h5>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                       
+                                
+                    </div>                     
+                                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
